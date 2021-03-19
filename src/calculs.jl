@@ -23,7 +23,7 @@ end
 
 function detrending(values; order = 1)
     position = collect(1:length(values))
-    fit = polyfit(position,values,order)
+    fit = Polynomials.polyfit(position,values,order)
     return values - polyval(fit,position)
 end
 
